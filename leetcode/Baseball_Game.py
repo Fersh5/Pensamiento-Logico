@@ -63,8 +63,7 @@ class Solution:
                     points.pop()
                 case _:
                     points.append(int(operations[opc]))
-            print(points)
-        return sum(points)    
+        return sum(points)
 
 case_1=Solution()
 print(case_1.calPoints(["5","-2","4","C","D","9","+","+"]))
