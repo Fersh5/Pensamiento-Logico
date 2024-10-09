@@ -64,7 +64,7 @@ class Solution:
         return state[1:]==[0,0]
 
 case_1=Solution()
-print(case_1.isRobotBounded('GGLLGG'))
+print(case_1.isRobotBounded('GGLLGG')) 
 print(case_1.isRobotBounded('GG'))
 print(case_1.isRobotBounded('GL'))
 print(case_1.isRobotBounded('LGLGGLGR'))
