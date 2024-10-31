@@ -26,17 +26,13 @@ class ListNode:
 
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        if not l1:
-            return l2
-        if not l2:
-            return l1
         head=ListNode((l1.val+l2.val)%10)
+        carry=(l1.val+l2.val)//10
         l1=l1.next
         l2=l2.next
+        val_1 = l1.val if l1 else 0
+        val_2 = l2.val if l2 else 0
         current=head
-        val_1 = l1.val if l1.val else 0
-        val_2 = l2.val if l2.val else 0
-        carry=(val_1+val_2)//10
         while l1 or l2 or carry:
             current.next=ListNode((val_1+val_2+carry)%10)
             carry=(val_1+val_2+carry)//10
@@ -59,7 +55,7 @@ class Solution:
                 l2=l2.next
                 val_2=l2.val
         return head
-
+    
 
 def created_linked_list(lista:List) -> ListNode:
     head=ListNode(lista[0])
@@ -75,15 +71,20 @@ def print_linked_list(head:ListNode):
         print(current.val,end=' -> ')
         current = current.next
     print(None)
-    
+
+case1=Solution()    
+
 lista_1=created_linked_list([9,9,9,9,9,9,9])
 lista_2=created_linked_list([9,9,9,9])
-
+lista_3=(case1.addTwoNumbers(lista_1,lista_2))
 print_linked_list(lista_1)
 print_linked_list(lista_2)
+print_linked_list(lista_3)
 
-case1=Solution()
+lista_1=created_linked_list([2,4,3])
+lista_2=created_linked_list([5,6,4])
 lista_3=(case1.addTwoNumbers(lista_1,lista_2))
-
+print_linked_list(lista_1)
+print_linked_list(lista_2)
 print_linked_list(lista_3)
 
