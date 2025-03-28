@@ -37,18 +37,18 @@ class Solution:
             current.next=ListNode((val_1+val_2+carry)%10)
             carry=(val_1+val_2+carry)//10
             current=current.next
-            if l1==None:
+            if l1 is None:
                 val_1=0
-            elif l1.next==None:
+            elif l1.next is None:
                 l1=l1.next
                 val_1=0
             else:
                 l1=l1.next
                 val_1=l1.val
             
-            if l2==None:
+            if l2 is None:
                 val_2=0
-            elif l2.next==None:
+            elif l2.next is None:
                 l2=l2.next
                 val_2=0
             else:
